@@ -21,39 +21,49 @@ public class Radio {
         currentStationNumber = newStationNumber;
     }
 
-    public int setNextStation(int currentStationNumber) {
+    public int setNextStation(int newCurrentStationNumber) {
 
-        if (currentStationNumber == 9) {
-            currentStationNumber = 0;
+        if (newCurrentStationNumber < 9) {
+            currentStationNumber = newCurrentStationNumber + 1;
         } else {
-            currentStationNumber = currentStationNumber + 1;
+            currentStationNumber = 0;
         }
         return currentStationNumber;
     }
 
-    public int setPrevStation(int currentStationNumber) {
+    public int setPrevStation(int newCurrentStationNumber) {
 
-        if (currentStationNumber == 0) {
+        if (newCurrentStationNumber == 0) {
             currentStationNumber = 9;
         } else {
-            currentStationNumber = currentStationNumber - 1;
+            currentStationNumber = newCurrentStationNumber - 1;
         }
         return currentStationNumber;
     }
 
-    public int setIncreaseVolume(int newCurrentSoundVolume) {
-        if (newCurrentSoundVolume == 10) {
-            return currentSoundVolume;
-        } else {
-            this.currentSoundVolume = this.currentSoundVolume + 1;
+    public int getCurrentSoundVolume() {
+        return currentSoundVolume;
+    }
+
+    public void setCurrentSoundVolume(int newCurrentSoundVolume) {
+        if (newCurrentSoundVolume < 0) {
+            return;
+        }
+        if (newCurrentSoundVolume > 10) {
+            return;
+        }
+        currentSoundVolume = newCurrentSoundVolume;
+    }
+
+    public int setIncreaseVolume() {
+        if (currentSoundVolume < 10) {
+            currentSoundVolume = currentSoundVolume + 1;
         }
         return currentSoundVolume;
     }
 
-    public int setDecreaseVolume(int newCurrentSoundVolume) {
-        if (newCurrentSoundVolume == 0) {
-            return currentSoundVolume;
-        } else {
+    public int setDecreaseVolume() {
+        if (currentSoundVolume > 0) {
             currentSoundVolume = currentSoundVolume - 1;
         }
         return currentSoundVolume;
