@@ -1,14 +1,14 @@
 package ru.netology.MvnOopAndPr.radio;
 
 public class Radio {
-    public int currentStationNumber;
-    public int currentSoundVolume;
+    private int currentStationNumber;
+    private int currentSoundVolume;
 
-    public int getCurrentStationNumber() {
+    int getCurrentStationNumber() {
         return currentStationNumber;
     }
 
-    public void setCurrentStationNumber(int newStationNumber) {
+    void setCurrentStationNumber(int newStationNumber) {
         if (newStationNumber > 9) {
             return;
         }
@@ -21,7 +21,7 @@ public class Radio {
         currentStationNumber = newStationNumber;
     }
 
-    public int setNextStation(int newCurrentStationNumber) {
+    int setNextStation(int newCurrentStationNumber) {
 
         if (newCurrentStationNumber < 9) {
             currentStationNumber = newCurrentStationNumber + 1;
@@ -31,7 +31,7 @@ public class Radio {
         return currentStationNumber;
     }
 
-    public int setPrevStation(int newCurrentStationNumber) {
+    int setPrevStation(int newCurrentStationNumber) {
 
         if (newCurrentStationNumber == 0) {
             currentStationNumber = 9;
@@ -41,11 +41,11 @@ public class Radio {
         return currentStationNumber;
     }
 
-    public int getCurrentSoundVolume() {
+    int getCurrentSoundVolume() {
         return currentSoundVolume;
     }
 
-    public void setCurrentSoundVolume(int newCurrentSoundVolume) {
+    void setCurrentSoundVolume(int newCurrentSoundVolume) {
         if (newCurrentSoundVolume < 0) {
             return;
         }
@@ -55,14 +55,14 @@ public class Radio {
         currentSoundVolume = newCurrentSoundVolume;
     }
 
-    public int setIncreaseVolume() {
+    int setIncreaseVolume() {
         if (currentSoundVolume < 10) {
             currentSoundVolume = currentSoundVolume + 1;
         }
         return currentSoundVolume;
     }
 
-    public int setDecreaseVolume() {
+    int setDecreaseVolume() {
         if (currentSoundVolume > 0) {
             currentSoundVolume = currentSoundVolume - 1;
         }
