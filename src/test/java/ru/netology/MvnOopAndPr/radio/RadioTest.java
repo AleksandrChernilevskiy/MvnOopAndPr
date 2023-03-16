@@ -57,7 +57,8 @@ public class RadioTest {
     public void shouldNextStationZero() {
 
         Radio rad = new Radio();
-        rad.setNextStation(9);
+        rad.setCurrentStationNumber(9);
+        rad.setNextStation();
 
         int expected = 0;
         int actual = rad.getCurrentStationNumber();
@@ -69,7 +70,8 @@ public class RadioTest {
     public void shouldNextStationNumber() {
 
         Radio rad = new Radio();
-        rad.setNextStation(0);
+        rad.setCurrentStationNumber(0);
+        rad.setNextStation();
 
         int expected = 1;
         int actual = rad.getCurrentStationNumber();
@@ -81,7 +83,8 @@ public class RadioTest {
     public void shouldPrevStationNine() {
 
         Radio rad = new Radio();
-        rad.setPrevStation(0);
+        rad.setCurrentStationNumber(0);
+        rad.setPrevStation();
 
         int expected = 9;
         int actual = rad.getCurrentStationNumber();
@@ -93,7 +96,8 @@ public class RadioTest {
     public void shouldPrevStationNumber() {
 
         Radio rad = new Radio();
-        rad.setPrevStation(9);
+        rad.setCurrentStationNumber(9);
+        rad.setPrevStation();
 
         int expected = 8;
         int actual = rad.getCurrentStationNumber();

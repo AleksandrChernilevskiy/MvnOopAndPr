@@ -21,22 +21,22 @@ public class Radio {
         currentStationNumber = newStationNumber;
     }
 
-    int setNextStation(int newCurrentStationNumber) {
+    int setNextStation() {
 
-        if (newCurrentStationNumber < 9) {
-            currentStationNumber = newCurrentStationNumber + 1;
+        if (currentStationNumber < 9) {
+            currentStationNumber = currentStationNumber + 1;
         } else {
             currentStationNumber = 0;
         }
         return currentStationNumber;
     }
 
-    int setPrevStation(int newCurrentStationNumber) {
+    int setPrevStation() {
 
-        if (newCurrentStationNumber == 0) {
+        if (currentStationNumber == 0) {
             currentStationNumber = 9;
         } else {
-            currentStationNumber = newCurrentStationNumber - 1;
+            currentStationNumber = currentStationNumber - 1;
         }
         return currentStationNumber;
     }
