@@ -1,5 +1,12 @@
 package ru.netology.MvnOopAndPr.radio;
 
+//import lombok.AllArgsConstructor;
+//import lombok.Data;
+//import lombok.NoArgsConstructor;
+
+//@NoArgsConstructor
+//@AllArgsConstructor
+//@Data
 public class Radio {
 
     private int quantityStation = 10;
@@ -14,10 +21,11 @@ public class Radio {
     private int minVolumeLevel;
     private int currentSoundVolume;
 
-    public Radio(int quantityStation) {
-        this.quantityStation = quantityStation;
-        this.maxStationNumber = quantityStation - 1;
-    }
+
+   public Radio(int quantityStation) {
+       this.quantityStation = quantityStation;
+       this.maxStationNumber = quantityStation - 1;
+   }
 
     public Radio() {
     }
@@ -63,20 +71,20 @@ public class Radio {
 
     public int setPrevStation() {
 
-        if (currentStationNumber == minStationNumber) {
-            currentStationNumber = maxStationNumber;
+       if (currentStationNumber == minStationNumber) {
+           currentStationNumber = maxStationNumber;
         } else {
-            currentStationNumber = currentStationNumber - 1;
-        }
+           currentStationNumber = currentStationNumber - 1;
+       }
         return currentStationNumber;
-    }
+   }
 
     public int getCurrentSoundVolume() {
         return currentSoundVolume;
     }
 
     public int getMaxVolumeLevel() {
-        return maxVolumeLevel;
+       return maxVolumeLevel;
     }
 
     public int getMinVolumeLevel() {
@@ -96,14 +104,14 @@ public class Radio {
     public int setIncreaseVolume() {
         if (currentSoundVolume < maxVolumeLevel) {
             currentSoundVolume = currentSoundVolume + 1;
-        }
+       }
         return currentSoundVolume;
-    }
+   }
 
     public int setDecreaseVolume() {
         if (currentSoundVolume > minVolumeLevel) {
             currentSoundVolume = currentSoundVolume - 1;
         }
-        return currentSoundVolume;
+       return currentSoundVolume;
     }
 }
