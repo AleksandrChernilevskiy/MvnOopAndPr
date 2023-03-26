@@ -90,7 +90,7 @@ public class RadioTest {
     public void shouldPrevStationNumber() {
 
         rad.setCurrentStationNumber(rad.getMaxStationNumber());
-        rad.();
+        rad.setPrevStation();
 
         int expected = rad.getMaxStationNumber() - 1;
         int actual = rad.getCurrentStationNumber();
