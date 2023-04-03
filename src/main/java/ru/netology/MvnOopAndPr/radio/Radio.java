@@ -26,6 +26,18 @@ public class Radio {
         this.maxStationNumber = this.quantityStation - 1;
     }
 
+    public int getQuantityStation() {
+        if (quantityStation <= 0) {
+            quantityStation = 0;
+        }
+        return this.quantityStation;
+    }
+    public int getMaxStationNumber() {
+        if (quantityStation <= 0) {
+            maxStationNumber = 0;
+        }
+        return this.maxStationNumber;
+    }
     public void setCurrentStationNumber(int newStationNumber) {
         if (newStationNumber > maxStationNumber) {
             return;

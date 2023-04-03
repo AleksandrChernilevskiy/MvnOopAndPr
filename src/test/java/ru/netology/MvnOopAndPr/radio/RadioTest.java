@@ -107,6 +107,29 @@ public class RadioTest {
     }
 
     @Test
+    public void shoulMinimumQuantityStation() {
+        Radio rad = new Radio(2);
+
+        Assertions.assertEquals(1, rad.getMaxStationNumber());
+        Assertions.assertEquals(2, rad.getQuantityStation());
+    }
+
+    @Test
+    public void shoulZeroQuantityStation() {
+        Radio rad = new Radio(0);
+
+        Assertions.assertEquals(0, rad.getMaxStationNumber());
+        Assertions.assertEquals(0, rad.getQuantityStation());
+    }
+
+    @Test
+    public void shoulNoQuantityStation() {
+        Radio rad = new Radio(-1);
+
+        Assertions.assertEquals(0, rad.getMaxStationNumber());
+        Assertions.assertEquals(0, rad.getQuantityStation());
+    }
+    @Test
     public void shouldLowVolume() {
         rad.setCurrentSoundVolume(rad.getMinVolumeLevel() - 1);
 
